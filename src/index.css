@@ -49,14 +49,18 @@ input {
 li {
   margin-top: 15px;
   list-style: none;
-  cursor: pointer;
   background: white;
   border-radius: 10px;
   padding: 10px;
   border-bottom: 2px solid #586958;
 }
 
-button {
+.item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
   width: 60px;
   background-color: rgb(129, 30, 51);
   color: white;
@@ -65,4 +69,13 @@ button {
   border: none;
   border-radius: 10px;
   margin-left: 5px;
+}
+
+.edit-btn,
+.del-btn {
+  font-size: 20px;
+  margin-left: 10px;
+  background-color:transparent;
+  border: none;
+  cursor: pointer;
 }
