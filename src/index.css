@@ -49,6 +49,7 @@ input {
 li {
   margin-top: 15px;
   list-style: none;
+  cursor: pointer;
   background: white;
   border-radius: 10px;
   padding: 10px;
@@ -71,6 +72,7 @@ li {
   margin-left: 5px;
 }
 
+.success-btn,
 .edit-btn,
 .del-btn {
   font-size: 20px;
@@ -78,4 +80,9 @@ li {
   background-color:transparent;
   border: none;
   cursor: pointer;
+}
+
+.all-btn {
+  display: flex;
+  
 }
