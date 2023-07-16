@@ -19,7 +19,7 @@ export const TodoList: React.FC = () => {
 
   const handleToggle = (id: number) => {
     setTodos(
-      todos.map((todo) => {
+      todos.map(todo => {
         if (todo.id === id) {
           return { ...todo, completed: !todo.completed };
         }
@@ -35,11 +35,11 @@ export const TodoList: React.FC = () => {
   };
 
   const handleDelete = (id: number) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
+    setTodos(todos.filter(todo => todo.id !== id));
   };
 
   const handleEdit = (id: number) => {
-    const itemToEdit = todos.find((todo) => todo.id === id);
+    const itemToEdit = todos.find(todo => todo.id === id);
     if (itemToEdit) {
       setEditingItemId(id);
       setEditingItemText(itemToEdit.text);
@@ -49,7 +49,7 @@ export const TodoList: React.FC = () => {
   const handleSave = () => {
     if (editingItemId !== null) {
       setTodos(
-        todos.map((todo) => {
+        todos.map(todo => {
           if (todo.id === editingItemId) {
             return { ...todo, text: editingItemText };
           }
@@ -69,32 +69,36 @@ export const TodoList: React.FC = () => {
           type="text"
           placeholder="Add todo item"
           value={input}
-          onChange={(e) => setInput(e.target.value)}
+          onChange={e => setInput(e.target.value)}
         />
-        <button className="btn" onClick={handleClick} disabled={input.length < 1}>
+        <button
+          className="btn"
+          onClick={handleClick}
+          disabled={input.length < 1}
+        >
           Add
         </button>
       </div>
       <hr />
       <ul>
-        {todos.map((todo) => (
-          <li
-            className="item"
-            key={todo.id}
-            style={{ textDecoration: todo.completed ? "line-through" : "none" }}
-          >
+        {todos.map(todo => (
+          <li className="item" key={todo.id}>
             {editingItemId === todo.id ? (
               <input
                 type="text"
                 value={editingItemText}
-                onChange={(e) => setEditingItemText(e.target.value)}
+                onChange={e => setEditingItemText(e.target.value)}
               />
             ) : (
               todo.text
             )}
             <div className="all-btn">
               {editingItemId === todo.id ? (
-                <button onClick={handleSave} className="success-btn" style={{ color: "green" }}>
+                <button
+                  onClick={handleSave}
+                  className="success-btn"
+                  style={{ color: "green" }}
+                >
                   <AiFillCheckCircle />
                 </button>
               ) : (

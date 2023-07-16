@@ -3,7 +3,6 @@
 * {
   margin: 0;
   padding: 0;
-
 }
 
 
@@ -20,11 +19,12 @@
 
 
 .main {
-  min-width: 600px;
+  width: 600px;
+  margin: 50px auto;
   background: rgb(238, 237, 234);
   border-radius: 20px;
   padding: 20px 50px;
-  
+
 }
 
 .title {
@@ -50,6 +50,20 @@ input {
 
 
 li {
+  color: brown;
+  font-size: 18px;
+}
+
+li>a {
+  text-decoration: none;
+  color: brown;
+  margin-left: 30px;
+
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
   margin-top: 15px;
   list-style: none;
   cursor: pointer;
@@ -57,11 +71,6 @@ li {
   border-radius: 10px;
   padding: 10px;
   border-bottom: 2px solid #586958;
-}
-
-.item {
-  display: flex;
-  justify-content: space-between;
 }
 
 .btn {
